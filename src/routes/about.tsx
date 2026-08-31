@@ -52,7 +52,7 @@ function About() {
           <p>
             DecantologyBD started in a Banani apartment in 2023, out of a simple frustration: a
             full bottle of a niche fragrance can cost more than a month's rent, and blind-buying
-            one from a photo is a expensive coin flip. Meanwhile, most of us only ever finish a
+            one from a photo is an expensive coin flip. Meanwhile, most of us only ever finish a
             fraction of a bottle before moving on.
           </p>
           <p>
