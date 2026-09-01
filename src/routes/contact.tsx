@@ -69,12 +69,12 @@ function Contact() {
             }}
             className="rounded-lg border border-border/70 bg-card p-6 sm:p-8"
           >
-            <Field label="Your name" name="name" error={errors.name} />
+            <Field label="Your name" name="name" error={errors["name"]} />
             <Field
               label="Mobile number"
               name="phone"
               placeholder="01712-345678"
-              error={errors.phone}
+              error={errors["phone"]}
             />
             <div className="mt-5">
               <label
@@ -91,8 +91,8 @@ function Contact() {
                 className="mt-2 w-full rounded-sm border border-input bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted-foreground focus:border-gold"
                 placeholder="Which fragrance are you looking for?"
               />
-              {errors.message && (
-                <p className="mt-1.5 text-xs text-destructive">{errors.message}</p>
+              {errors["message"] && (
+                <p className="mt-1.5 text-xs text-destructive">{errors["message"]}</p>
               )}
             </div>
             <button
@@ -179,8 +179,8 @@ function Field({
 }: {
   label: string;
   name: string;
-  placeholder?: string;
-  error?: string;
+  placeholder?: string | undefined;
+  error?: string | undefined;
 }) {
   return (
     <div className="mt-5 first:mt-0">

@@ -178,16 +178,16 @@ function CartPage() {
               <h2 className="font-display text-2xl">Delivery details</h2>
 
               <div className="mt-6 grid gap-5 sm:grid-cols-2">
-                <Field label="Full name" name="name" error={errors.name} />
+                <Field label="Full name" name="name" error={errors["name"]} />
                 <Field
                   label="Mobile number"
                   name="phone"
                   placeholder="01712-345678"
-                  error={errors.phone}
+                  error={errors["phone"]}
                 />
               </div>
               <div className="mt-5">
-                <Field label="City / district" name="city" error={errors.city} />
+                <Field label="City / district" name="city" error={errors["city"]} />
               </div>
               <div className="mt-5">
                 <label
@@ -204,8 +204,8 @@ function CartPage() {
                   placeholder="House, road, area, landmark"
                   className="mt-2 w-full rounded-sm border border-input bg-secondary px-4 py-3 text-sm outline-none placeholder:text-muted-foreground focus:border-gold"
                 />
-                {errors.address && (
-                  <p className="mt-1.5 text-xs text-destructive">{errors.address}</p>
+                {errors["address"] && (
+                  <p className="mt-1.5 text-xs text-destructive">{errors["address"]}</p>
                 )}
               </div>
               <div className="mt-5">
@@ -339,8 +339,8 @@ function Field({
 }: {
   label: string;
   name: string;
-  placeholder?: string;
-  error?: string;
+  placeholder?: string | undefined;
+  error?: string | undefined;
 }) {
   return (
     <div>

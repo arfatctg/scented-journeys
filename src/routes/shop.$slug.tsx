@@ -46,7 +46,7 @@ export const Route = createFileRoute("/shop/$slug")({
 function ProductDetail() {
   const { product } = Route.useLoaderData();
   const sizes = availableSizes(product);
-  const [size, setSize] = useState<SizeMl>(sizes[0]);
+  const [size, setSize] = useState<SizeMl>(sizes[0]!);
   const [image, setImage] = useState(0);
   const { add } = useCart();
 
