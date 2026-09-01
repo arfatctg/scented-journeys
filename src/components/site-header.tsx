@@ -52,11 +52,11 @@ export function SiteHeader() {
         <Link
           to="/cart"
           aria-label="Cart"
-          className="relative shrink-0 text-muted-foreground transition-colors hover:text-gold"
+          className="relative mr-2 shrink-0 p-1 text-muted-foreground transition-colors hover:text-gold"
         >
           <ShoppingBag className="h-5 w-5" strokeWidth={1.5} />
           {count > 0 && (
-            <span className="absolute -top-2 -right-2 grid h-4.5 w-4.5 min-w-[1.125rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-medium text-primary-foreground">
+            <span className="absolute -top-1.5 -right-1.5 grid h-4.5 w-4.5 min-w-[1.125rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-medium text-primary-foreground">
               {count}
             </span>
           )}
