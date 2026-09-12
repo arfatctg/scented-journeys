@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * DecantologyBD design system — charcoal, gold, ivory.
- * Serif display (Cormorant Garamond) + clean sans (Jost).
+ * Try Decants design system — deep navy, warm gold, white.
+ * Playfair Display headings + DM Sans body.
  * All colors in oklch. Never hardcode colors in components.
  */
 
@@ -39,50 +39,56 @@
   --color-gold-soft: var(--gold-soft);
   --color-ivory: var(--ivory);
   --color-charcoal: var(--charcoal);
-  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --color-navy: var(--navy);
+  --color-off-white: var(--off-white);
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.25rem;
 
-  --charcoal: oklch(0.19 0.045 155);
-  --ivory: oklch(0.955 0.014 110);
-  --gold: oklch(0.78 0.115 85);
-  --gold-soft: oklch(0.86 0.07 88);
+  --navy: oklch(0.205 0.04 253);
+  --charcoal: oklch(0.205 0.04 253);
+  --ivory: oklch(1 0 0);
+  --off-white: oklch(0.974 0.008 88);
+  --gold: oklch(0.73 0.112 85);
+  --gold-soft: oklch(0.82 0.09 83);
 
-  --background: oklch(0.17 0.042 155);
-  --foreground: oklch(0.955 0.014 110);
-  --card: oklch(0.215 0.045 155);
-  --card-foreground: oklch(0.955 0.014 110);
-  --popover: oklch(0.215 0.045 155);
-  --popover-foreground: oklch(0.955 0.014 110);
-  --primary: oklch(0.78 0.115 85);
-  --primary-foreground: oklch(0.17 0.042 155);
-  --secondary: oklch(0.255 0.045 155);
-  --secondary-foreground: oklch(0.955 0.014 110);
-  --muted: oklch(0.255 0.045 155);
-  --muted-foreground: oklch(0.75 0.028 140);
-  --accent: oklch(0.3 0.055 155);
-  --accent-foreground: oklch(0.955 0.014 110);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.205 0.04 253);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0.04 253);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0.04 253);
+  --primary: oklch(0.73 0.112 85);
+  --primary-foreground: oklch(0.205 0.04 253);
+  --secondary: oklch(0.974 0.008 88);
+  --secondary-foreground: oklch(0.205 0.04 253);
+  --muted: oklch(0.974 0.008 88);
+  --muted-foreground: oklch(0.49 0.025 253);
+  --accent: oklch(0.94 0.025 86);
+  --accent-foreground: oklch(0.205 0.04 253);
   --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.97 0.01 85);
-  --border: oklch(0.32 0.045 155);
-  --input: oklch(0.32 0.045 155);
-  --ring: oklch(0.78 0.115 85);
+  --border: oklch(0.91 0.011 86);
+  --input: oklch(0.88 0.012 86);
+  --ring: oklch(0.73 0.112 85);
 
   --gradient-gold: linear-gradient(
     100deg,
-    oklch(0.7 0.09 80),
-    oklch(0.88 0.09 90),
-    oklch(0.72 0.1 78)
+    var(--gold),
+    var(--gold-soft),
+    var(--gold)
   );
   --gradient-veil: linear-gradient(
     180deg,
-    color-mix(in oklab, var(--charcoal) 5%, transparent),
-    color-mix(in oklab, var(--charcoal) 92%, transparent)
+    color-mix(in oklab, var(--navy) 8%, transparent),
+    color-mix(in oklab, var(--navy) 94%, transparent)
   );
-  --shadow-lux: 0 24px 60px -24px oklch(0.12 0.05 155 / 0.85);
+  --gradient-hero: linear-gradient(0deg, color-mix(in oklab, var(--navy) 97%, transparent), color-mix(in oklab, var(--navy) 68%, transparent));
+  --gradient-button: linear-gradient(110deg, var(--gold), var(--gold-soft), var(--gold));
+  --shadow-lux: 0 18px 40px -24px color-mix(in oklab, var(--navy) 55%, transparent);
   --shadow-gold: 0 0 0 1px color-mix(in oklab, var(--gold) 35%, transparent);
 }
 
@@ -97,6 +103,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
+
+  ::selection { background: var(--gold-soft); color: var(--navy); }
 
   h1,
   h2,
@@ -113,6 +121,29 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+@utility bg-gold-gradient {
+  background: var(--gradient-button);
+  background-size: 200% 100%;
+  transition: background-position 400ms ease, box-shadow 300ms ease;
+  &:hover { background-position: 100% 0; box-shadow: var(--shadow-gold); }
+}
+
+@utility hero-sheen {
+  background: linear-gradient(105deg, var(--ivory) 15%, var(--gold-soft) 48%, var(--ivory) 72%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sheen 6s linear infinite;
+}
+
+@keyframes sheen { to { background-position: -220% center; } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sheen { animation: none; }
 }
 
 @utility eyebrow {
