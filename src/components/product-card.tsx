@@ -8,7 +8,7 @@ export function ProductCard({ product }: { product: Product }) {
     <Link
       to="/shop/$slug"
       params={{ slug: product.slug }}
-      className="group block overflow-hidden rounded-lg border border-border/70 bg-card transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[var(--shadow-lux)]"
+      className="group block overflow-hidden rounded-lg border-2 border-border/70 bg-card transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:shadow-[var(--shadow-lux)]"
     >
       <div className="relative aspect-4/5 overflow-hidden bg-secondary">
         <img
@@ -20,7 +20,7 @@ export function ProductCard({ product }: { product: Product }) {
           className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
         />
         {product.badge && (
-          <span className="absolute top-3 left-3 rounded-full border border-gold/50 bg-background/80 px-3 py-1 text-[10px] tracking-[0.2em] text-gold uppercase backdrop-blur">
+          <span className="absolute top-3 left-3 rounded-full bg-primary px-3 py-1 text-[10px] tracking-[0.2em] text-primary-foreground uppercase">
             {product.badge}
           </span>
         )}

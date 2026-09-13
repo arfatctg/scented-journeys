@@ -1,0 +1,7 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PolicyLayout } from "@/components/policy-layout";
+
+export const Route = createFileRoute("/refund-policy")({
+  head: () => ({ meta: [{ title: "Refund Policy — Try Decants" }, { name: "description", content: "Read how approved refunds are handled by Try Decants." }, { property: "og:title", content: "Refund Policy — Try Decants" }, { property: "og:description", content: "Refund timing and conditions for Try Decants orders." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }), component: RefundPolicy,
+});
+function RefundPolicy(){return <PolicyLayout title="Refund Policy" intro="What happens after a return, damage, or authenticity claim is approved."><section><h2>Approved refunds</h2><p>Approved refunds cover the item value and, where the issue was caused by us, the original delivery charge. Change-of-mind purchases and opened decants are not refundable.</p></section><section><h2>Processing time</h2><p>Refunds are initiated after the returned item is received and inspected. bKash and Nagad refunds may take several working days to appear.</p></section><section><h2>Authenticity promise</h2><p>If a fragrance is found not to be authentic, we will refund the full purchase price after reviewing the product and order details.</p></section></PolicyLayout>}

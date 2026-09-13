@@ -6,13 +6,13 @@ import { heroImage } from "@/lib/products";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Our Story & Authenticity Promise — DecantologyBD" },
+      { title: "Our Story & Authenticity Promise — Try Decants" },
       {
         name: "description",
         content:
-          "Why decants make sense, how DecantologyBD fills them, and the authenticity promise behind every 3ml, 5ml and 10ml vial.",
+          "Why decants make sense, how Try Decants fills them, and the authenticity promise behind every 3ml, 5ml and 10ml vial.",
       },
-      { property: "og:title", content: "Our Story & Authenticity Promise — DecantologyBD" },
+      { property: "og:title", content: "Our Story & Authenticity Promise — Try Decants" },
       {
         property: "og:description",
         content: "How we decant, why we do it, and our guarantee of 100% authentic fragrance.",
@@ -38,7 +38,7 @@ function About() {
         <div className="overflow-hidden rounded-lg border border-gold/25">
           <img
             src={heroImage}
-            alt="DecantologyBD decant vials being filled"
+            alt="Try Decants fragrance vials being filled"
             loading="lazy"
             width={1408}
             height={1200}
@@ -50,7 +50,7 @@ function About() {
       <Reveal className="mt-12">
         <div className="space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
           <p>
-            DecantologyBD started in a Banani apartment in 2023, out of a simple frustration: a
+            Try Decants started in a Banani apartment in 2023, out of a simple frustration: a
             full bottle of a niche fragrance can cost more than a month's rent, and blind-buying
             one from a photo is an expensive coin flip. Meanwhile, most of us only ever finish a
             fraction of a bottle before moving on.

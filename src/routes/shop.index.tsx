@@ -30,13 +30,13 @@ export const Route = createFileRoute("/shop/")({
   validateSearch: (search) => searchSchema.parse(search),
   head: () => ({
     meta: [
-      { title: "Shop All Perfume Decants — DecantologyBD" },
+      { title: "Shop All Perfume Decants — Try Decants" },
       {
         name: "description",
         content:
           "Browse every decant: filter by brand, gender, size (3ml-30ml) and price. Authentic designer and niche fragrances in BDT.",
       },
-      { property: "og:title", content: "Shop All Perfume Decants — DecantologyBD" },
+      { property: "og:title", content: "Shop All Perfume Decants — Try Decants" },
       {
         property: "og:description",
         content: "Filter authentic designer and niche fragrance decants by brand, size and price.",
@@ -102,11 +102,11 @@ function Shop() {
 
       <div className="mt-10 grid gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
         {/* Filters */}
-        <aside className="space-y-7 lg:sticky lg:top-24 lg:self-start">
+        <aside className="space-y-7 rounded-lg bg-navy p-5 text-ivory lg:sticky lg:top-28 lg:self-start">
           <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
             <div className="flex min-w-0 items-center gap-2">
               <SlidersHorizontal className="h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} />
-              <span className="eyebrow">Filters</span>
+              <span className="eyebrow !text-gold">Filters</span>
             </div>
             {activeFilters > 0 && (
               <button
@@ -114,7 +114,7 @@ function Shop() {
                 onClick={() =>
                   set({ brand: undefined, gender: undefined, size: undefined, maxPrice: undefined })
                 }
-                className="flex shrink-0 items-center gap-1 text-[11px] tracking-wider text-muted-foreground uppercase hover:text-gold"
+                 className="flex shrink-0 items-center gap-1 text-[11px] tracking-wider text-ivory/60 uppercase hover:text-gold"
               >
                 <X className="h-3 w-3" /> Clear
               </button>
@@ -153,7 +153,7 @@ function Shop() {
             <select
               value={search.brand ?? ""}
               onChange={(e) => set({ brand: e.target.value || undefined })}
-              className="w-full rounded-sm border border-input bg-secondary px-3 py-2.5 text-sm text-foreground outline-none focus:border-gold"
+              className="w-full rounded-sm border border-gold/40 bg-navy px-3 py-2.5 text-sm text-ivory outline-none focus:border-gold"
             >
               <option value="">All brands</option>
               {brands.map((b) => (
@@ -221,7 +221,7 @@ function Shop() {
 function FilterGroup({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <p className="mb-3 text-[11px] tracking-[0.2em] text-muted-foreground uppercase">{label}</p>
+      <p className="mb-3 text-[11px] tracking-[0.2em] text-gold uppercase">{label}</p>
       {children}
     </div>
   );
@@ -243,7 +243,7 @@ function Chip({
       className={`rounded-full border px-3 py-1.5 text-[11px] tracking-wider transition-colors ${
         active
           ? "border-gold bg-primary text-primary-foreground"
-          : "border-border text-muted-foreground hover:border-gold/60 hover:text-gold"
+          : "border-ivory/25 text-ivory/70 hover:border-gold hover:text-gold"
       }`}
     >
       {children}

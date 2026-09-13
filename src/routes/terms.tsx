@@ -1,0 +1,7 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PolicyLayout } from "@/components/policy-layout";
+
+export const Route = createFileRoute("/terms")({
+  head: () => ({ meta: [{ title: "Terms & Conditions — Try Decants" }, { name: "description", content: "Terms for shopping with Try Decants in Bangladesh." }, { property: "og:title", content: "Terms & Conditions — Try Decants" }, { property: "og:description", content: "Terms governing Try Decants orders and services." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }), component: Terms,
+});
+function Terms(){return <PolicyLayout title="Terms & Conditions" intro="The essentials governing orders, payments, delivery, and product use."><section><h2>Orders and confirmation</h2><p>Orders are subject to stock availability and confirmation. We may contact you by phone before dispatch, especially for cash-on-delivery orders.</p></section><section><h2>Pricing and payment</h2><p>Prices are shown in Bangladeshi taka. Delivery charges and the final total are displayed before you place your order.</p></section><section><h2>Fragrance experience</h2><p>Longevity, sillage, and scent perception vary by skin, climate, and individual preference. Descriptions are guidance rather than performance guarantees.</p></section><section><h2>Delivery</h2><p>Estimated delivery windows may change due to courier conditions, holidays, weather, or events outside our control.</p></section></PolicyLayout>}

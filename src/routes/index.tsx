@@ -11,18 +11,18 @@ import {
 } from "@/components/ui/carousel";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
-import { CATEGORIES, heroImage, products } from "@/lib/products";
+import { brands, CATEGORIES, heroImage, products } from "@/lib/products";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DecantologyBD — Authentic Perfume Decants in Bangladesh" },
+      { title: "Try Decants — Authentic Perfume Decants in Bangladesh" },
       {
         name: "description",
         content:
           "Try designer and niche fragrances in 3ml, 5ml, 10ml or 30ml decants. 100% authentic, hand-filled in Dhaka, delivered nationwide.",
       },
-      { property: "og:title", content: "DecantologyBD — Authentic Perfume Decants" },
+      { property: "og:title", content: "Try Decants — Try Before You Buy" },
       {
         property: "og:description",
         content: "Designer & niche fragrance decants from ৳380. Cash on delivery, bKash & Nagad.",
@@ -42,31 +42,31 @@ function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border/60">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24">
+      <section className="relative overflow-hidden border-b border-gold/40 bg-navy">
+        <div className="pointer-events-none absolute inset-0 opacity-25" style={{ background: "radial-gradient(circle at 70% 30%, var(--gold), transparent 35%)" }} />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24">
           <div>
-            <p className="eyebrow">Perfume decants · Bangladesh</p>
-            <h1 className="mt-5 font-display text-4xl leading-[1.08] sm:text-5xl md:text-6xl">
-              Wear the fragrance
-              <span className="block text-gold-gradient italic">before you own it.</span>
+            <p className="font-display text-sm italic text-gold">— Try Before You Buy —</p>
+            <h1 className="hero-sheen mt-5 font-display text-4xl leading-[1.08] sm:text-5xl md:text-6xl">
+              Try Before You Buy — Find Your Signature Scent
             </h1>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Hand-filled 3ml, 5ml, 10ml and 30ml samples of the world's most talked-about
-              designer and niche houses — every drop decanted from a verified batch.
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-ivory/75 sm:text-base">
+              Authentic decants delivered across Bangladesh. Sample first, commit later.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link
                 to="/shop"
-                className="group inline-flex items-center gap-2 rounded-sm bg-primary px-7 py-3.5 text-xs tracking-[0.22em] text-primary-foreground uppercase transition-opacity hover:opacity-90"
+                className="bg-gold-gradient group inline-flex items-center gap-2 rounded-sm px-7 py-3.5 text-xs tracking-[0.22em] text-navy uppercase"
               >
-                Shop the collection
+                Shop Decants
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                to="/about"
-                className="text-xs tracking-[0.22em] text-muted-foreground uppercase transition-colors hover:text-gold"
+                to="/shop"
+                search={{ gender: "Niche" }}
+                className="rounded-sm border border-ivory px-6 py-3.5 text-xs tracking-[0.22em] text-ivory uppercase transition-colors hover:border-gold hover:text-gold"
               >
-                Why decants?
+                View Sample Packs
               </Link>
             </div>
           </div>
@@ -83,11 +83,17 @@ function Home() {
             </div>
             <div className="absolute -bottom-5 left-4 rounded-sm border border-gold/40 bg-background/90 px-5 py-3 backdrop-blur sm:left-8">
               <p className="eyebrow">Starting at</p>
-              <p className="font-display text-2xl text-gold">৳380 / 3ml</p>
+               <p className="font-display text-2xl text-gold">৳380 / 3ml</p>
             </div>
           </div>
         </div>
       </section>
+
+      <div className="overflow-hidden border-b border-gold/30 bg-navy py-3 text-gold" aria-label="Store benefits">
+        <div className="w-max animate-[marquee_28s_linear_infinite] whitespace-nowrap text-xs tracking-[0.2em] uppercase">
+          ✦ 100% Authentic ✦ Try Before You Buy ✦ Fast Delivery ✦ Secure Payment ✦ Easy Returns ✦ 100% Authentic ✦ Try Before You Buy ✦ Fast Delivery ✦ Secure Payment ✦ Easy Returns ✦
+        </div>
+      </div>
 
       {/* Categories */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
@@ -130,8 +136,13 @@ function Home() {
         </div>
       </section>
 
+      <section className="relative overflow-hidden border-y border-gold/30 bg-navy py-16">
+        <div className="absolute inset-x-0 top-5 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6"><div className="text-center"><p className="eyebrow !text-gold">Shop by brand</p><h2 className="mt-3 font-display text-3xl text-ivory sm:text-4xl">Houses worth discovering</h2></div><div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{brands.slice(0, 12).map((brand) => <Link key={brand} to="/shop" search={{ brand }} className="border border-gold/60 px-3 py-4 text-center text-xs tracking-wide text-ivory transition-colors hover:bg-gold hover:text-navy">{brand}</Link>)}</div></div>
+      </section>
+
       {/* Best sellers / new arrivals carousel */}
-      <section className="border-y border-border/60 bg-card/30 py-20">
+      <section className="border-b border-border bg-off-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <Reveal>
             <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
@@ -197,7 +208,7 @@ function Home() {
             },
           ].map((b, i) => (
             <Reveal key={b.title} delay={i * 100}>
-              <div className="h-full rounded-lg border border-border/70 bg-card p-7 transition-colors hover:border-gold/40">
+              <div className="h-full rounded-lg border border-border border-l-4 border-l-navy bg-card p-7 transition-colors hover:border-gold hover:border-l-navy">
                 <b.icon className="h-6 w-6 text-gold" strokeWidth={1.4} />
                 <h3 className="mt-5 font-display text-xl">{b.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.body}</p>
@@ -227,7 +238,7 @@ function Home() {
                 toast.error("Please enter a valid email address.");
                 return;
               }
-              toast.success("You're on the list. Welcome to Decantology.");
+               toast.success("You're on the list. Welcome to Try Decants.");
               e.currentTarget.reset();
             }}
           >
@@ -241,7 +252,7 @@ function Home() {
             />
             <button
               type="submit"
-              className="shrink-0 rounded-sm bg-primary px-6 py-3 text-xs tracking-[0.22em] text-primary-foreground uppercase transition-opacity hover:opacity-90"
+              className="bg-gold-gradient shrink-0 rounded-sm px-6 py-3 text-xs tracking-[0.22em] text-navy uppercase"
             >
               Subscribe
             </button>

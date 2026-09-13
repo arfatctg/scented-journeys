@@ -23,11 +23,11 @@ export const Route = createFileRoute("/shop/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Decant not found — DecantologyBD" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Decant not found — Try Decants" }, { name: "robots", content: "noindex" }],
       };
     }
     const { product } = loaderData;
-    const title = `${product.name} Decant by ${product.brand} — DecantologyBD`;
+    const title = `${product.name} Decant by ${product.brand} — Try Decants`;
     const description = `${product.name} decants in ${availableSizes(product)
       .map((s) => `${s}ml`)
       .join(", ")}. ${product.description.slice(0, 100)}`;
@@ -119,7 +119,7 @@ function ProductDetail() {
                   onClick={() => setSize(s)}
                   className={`rounded-sm border px-4 py-3 text-sm transition-colors ${
                     s === size
-                      ? "border-gold bg-primary text-primary-foreground"
+                       ? "border-gold bg-accent text-gold"
                       : "border-border text-foreground hover:border-gold/60 hover:text-gold"
                   }`}
                 >
@@ -143,7 +143,7 @@ function ProductDetail() {
                 add(product.slug, size);
                 toast.success(`${product.name} ${size}ml added to your cart`);
               }}
-              className="rounded-sm bg-primary px-8 py-3.5 text-xs tracking-[0.22em] text-primary-foreground uppercase transition-opacity hover:opacity-90"
+               className="bg-gold-gradient rounded-sm px-8 py-3.5 text-xs tracking-[0.22em] text-navy uppercase"
             >
               Add to cart
             </button>

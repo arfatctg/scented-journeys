@@ -25,7 +25,7 @@ type CartContextValue = {
   subtotal: number;
 };
 
-const STORAGE_KEY = "decantologybd.cart.v1";
+const STORAGE_KEY = "try-decants.cart.v1";
 
 const CartContext = createContext<CartContextValue | null>(null);
 
