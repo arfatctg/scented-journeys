@@ -10,13 +10,13 @@ import { formatBDT, getProduct } from "@/lib/products";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "Your Cart & Checkout — DecantologyBD" },
+      { title: "Your Cart & Checkout — Try Decants" },
       {
         name: "description",
         content:
           "Review your decants and check out with cash on delivery, bKash or Nagad. Nationwide delivery across Bangladesh.",
       },
-      { property: "og:title", content: "Your Cart & Checkout — DecantologyBD" },
+      { property: "og:title", content: "Your Cart & Checkout — Try Decants" },
       {
         property: "og:description",
         content: "Cash on delivery, bKash and Nagad accepted. Delivery anywhere in Bangladesh.",
@@ -268,8 +268,9 @@ function CartPage() {
 
         {/* Summary */}
         <aside className="lg:sticky lg:top-24 lg:self-start">
-          <div className="rounded-lg border border-gold/25 bg-card p-6">
-            <h2 className="font-display text-2xl">Summary</h2>
+          <div className="overflow-hidden rounded-lg border border-gold/40 bg-card">
+            <div className="bg-navy px-6 py-5"><h2 className="font-display text-2xl text-gold">Order Summary</h2></div>
+            <div className="p-6">
             <dl className="mt-6 space-y-3 text-sm">
               <Row label={`Subtotal (${count} ${count === 1 ? "item" : "items"})`}>
                 {formatBDT(subtotal)}
@@ -284,13 +285,13 @@ function CartPage() {
             <button
               type="submit"
               form="checkout-form"
-              className="mt-7 w-full rounded-sm bg-primary px-6 py-4 text-xs tracking-[0.22em] text-primary-foreground uppercase transition-opacity hover:opacity-90"
+               className="bg-gold-gradient mt-7 w-full rounded-sm px-6 py-4 text-xs tracking-[0.22em] text-navy uppercase"
             >
               Place order
             </button>
             <p className="mt-4 text-center text-[11px] leading-relaxed text-muted-foreground">
               We call every order to confirm before dispatch. Authenticity guaranteed.
-            </p>
+            </p></div>
           </div>
         </aside>
       </div>

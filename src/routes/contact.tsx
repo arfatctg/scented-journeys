@@ -9,13 +9,13 @@ import { WHATSAPP_NUMBER } from "@/components/whatsapp-button";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact DecantologyBD — WhatsApp, Facebook & Dhaka Studio" },
+      { title: "Contact Try Decants — WhatsApp, Facebook & Dhaka Studio" },
       {
         name: "description",
         content:
-          "Questions about a decant, an order or a custom split? Message DecantologyBD on WhatsApp or send us a note.",
+          "Questions about a decant, an order or a custom split? Message Try Decants on WhatsApp or send us a note.",
       },
-      { property: "og:title", content: "Contact DecantologyBD" },
+      { property: "og:title", content: "Contact Try Decants" },
       {
         property: "og:description",
         content: "Reach our Dhaka studio on WhatsApp, Facebook or through the contact form.",
@@ -129,7 +129,7 @@ function Contact() {
               <Facebook className="mt-0.5 h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} />
               <div className="min-w-0">
                 <p className="font-display text-lg">Facebook Page</p>
-                <p className="text-sm text-muted-foreground">fb.com/decantologybd</p>
+                <p className="text-sm text-muted-foreground">fb.com/trydecants</p>
               </div>
             </a>
             <div className="flex items-start gap-4 rounded-lg border border-border/70 bg-card p-5">
@@ -154,7 +154,7 @@ function Contact() {
               <Mail className="mt-0.5 h-5 w-5 shrink-0 text-gold" strokeWidth={1.5} />
               <div className="min-w-0">
                 <p className="font-display text-lg">Email</p>
-                <p className="text-sm text-muted-foreground">hello@decantologybd.com</p>
+                <p className="text-sm text-muted-foreground">hello@trydecants.com</p>
               </div>
             </div>
             <div className="flex items-start gap-4 rounded-lg border border-border/70 bg-card p-5">
