@@ -1,0 +1,12 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Heart, LayoutDashboard, LogOut, MapPin, Package, UserRound } from "lucide-react";
+
+export const Route = createFileRoute("/dashboard")({
+  head: () => ({ meta: [{ title: "Customer Dashboard — Try Decants" }, { name: "description", content: "View your Try Decants orders and account details." }, { property: "og:title", content: "Customer Dashboard — Try Decants" }, { property: "og:description", content: "Your Try Decants account overview." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
+  component: DashboardPage,
+});
+
+function DashboardPage() {
+  const links=[{Icon:LayoutDashboard,label:"Overview"},{Icon:Package,label:"Orders"},{Icon:MapPin,label:"Addresses"},{Icon:Heart,label:"Wishlist"},{Icon:UserRound,label:"Account details"}];
+  return <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6"><header><p className="eyebrow">My account</p><h1 className="mt-3 font-display text-4xl">Customer Dashboard</h1></header><div className="mt-10 grid gap-8 lg:grid-cols-[250px_minmax(0,1fr)]"><aside className="rounded-lg bg-navy p-4">{links.map(({Icon,label},i)=><button type="button" key={label} className={`flex w-full items-center gap-3 rounded-sm px-4 py-3 text-left text-sm ${i===0?"bg-gold text-navy":"text-ivory/75 hover:text-gold"}`}><Icon className="h-4 w-4"/>{label}</button>)}<Link to="/login" className="mt-4 flex items-center gap-3 border-t border-gold/20 px-4 pt-5 text-sm text-ivory/75 hover:text-gold"><LogOut className="h-4 w-4"/>Logout</Link></aside><section><h2 className="font-display text-2xl">Welcome to Try Decants</h2><p className="mt-2 text-sm text-muted-foreground">Manage your orders and fragrance preferences from one place.</p><div className="mt-7 grid gap-4 sm:grid-cols-3">{[{n:"0",label:"Open orders"},{n:"0",label:"Wishlist items"},{n:"—",label:"Next delivery"}].map((item)=><div key={item.label} className="rounded-lg border border-border bg-card p-6"><p className="font-display text-3xl text-gold">{item.n}</p><p className="mt-2 text-xs tracking-wide text-muted-foreground uppercase">{item.label}</p></div>)}</div><div className="mt-7 rounded-lg border border-border bg-off-white p-6"><h3 className="font-display text-xl">Recent orders</h3><p className="mt-6 text-sm text-muted-foreground">No orders yet. Your first signature scent is waiting.</p><Link to="/shop" className="mt-5 inline-flex border-b border-gold text-xs tracking-[0.16em] text-navy uppercase">Shop decants</Link></div></section></div></div>;
+}

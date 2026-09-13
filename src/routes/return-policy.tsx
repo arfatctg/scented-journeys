@@ -1,0 +1,7 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PolicyLayout } from "@/components/policy-layout";
+
+export const Route = createFileRoute("/return-policy")({
+  head: () => ({ meta: [{ title: "Return Policy — Try Decants" }, { name: "description", content: "Read the Try Decants return policy for fragrance decants and damaged deliveries." }, { property: "og:title", content: "Return Policy — Try Decants" }, { property: "og:description", content: "Return conditions for Try Decants orders." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }), component: ReturnPolicy,
+});
+function ReturnPolicy(){return <PolicyLayout title="Return Policy" intro="Clear, fair support when your Try Decants order does not arrive as expected."><section><h2>Eligible returns</h2><p>For hygiene and product integrity, opened or sprayed decants cannot be returned. We accept return requests for unopened items delivered in error or items that arrive damaged.</p></section><section><h2>Request window</h2><p>Contact us within 48 hours of delivery with your order details and clear photos of the parcel and product. Keep the original packaging until the request is reviewed.</p></section><section><h2>How to request a return</h2><p>Send us a message through WhatsApp or the contact page. Once approved, we will provide the return instructions and confirm the next step.</p></section></PolicyLayout>}
