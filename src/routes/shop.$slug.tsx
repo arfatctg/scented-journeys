@@ -37,6 +37,8 @@ export const Route = createFileRoute("/shop/$slug")({
         { name: "description", content: description },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
+        { property: "og:type", content: "product" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
     };
   },

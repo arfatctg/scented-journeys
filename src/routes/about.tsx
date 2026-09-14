@@ -17,6 +17,8 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "How we decant, why we do it, and our guarantee of 100% authentic fragrance.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: About,
