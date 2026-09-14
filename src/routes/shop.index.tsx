@@ -41,6 +41,8 @@ export const Route = createFileRoute("/shop/")({
         property: "og:description",
         content: "Filter authentic designer and niche fragrance decants by brand, size and price.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Shop,

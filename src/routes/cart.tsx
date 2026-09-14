@@ -21,6 +21,8 @@ export const Route = createFileRoute("/cart")({
         property: "og:description",
         content: "Cash on delivery, bKash and Nagad accepted. Delivery anywhere in Bangladesh.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: CartPage,

@@ -27,6 +27,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Designer & niche fragrance decants from ৳380. Cash on delivery, bKash & Nagad.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,

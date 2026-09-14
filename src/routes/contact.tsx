@@ -20,6 +20,8 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Reach our Dhaka studio on WhatsApp, Facebook or through the contact form.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Contact,
