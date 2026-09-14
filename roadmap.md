@@ -9,3 +9,14 @@
 - [x] Add and verify the mini-cart drawer.
 - [x] Add login, register, customer dashboard, and policy pages.
 - [x] Verify all routes on desktop and mobile.
+
+## Storefront expansion
+
+- [ ] Add every requested homepage merchandising and social-proof section.
+- [ ] Expand product cards with size choices, wishlist, quick view, and cart actions.
+- [ ] Complete shop filters, sorting, four-column results, and pagination.
+- [ ] Complete product gallery, purchasing controls, trust details, accordions, and mobile cart bar.
+- [ ] Split cart and checkout into dedicated, complete pages.
+- [ ] Complete login, registration, dashboard tabs, and policy copy.
+- [ ] Install the uploaded logo, light navigation treatment, and matching favicon.
+- [ ] Verify all storefront routes and interactions on desktop and mobile.
