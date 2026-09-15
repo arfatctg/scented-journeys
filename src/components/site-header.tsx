@@ -22,10 +22,10 @@ export function SiteHeader() {
       <div className="border-b border-gold/30 bg-navy px-4 py-2 text-center text-[9px] tracking-[0.12em] text-gold sm:text-[11px] sm:tracking-[0.18em]">
         Free Delivery on Orders Over ৳1500 <span className="mx-2 text-gold-soft">•</span> Try Before You Buy <span className="mx-2 text-gold-soft">•</span> 100% Authentic Guaranteed
       </div>
-      <header className="sticky top-0 z-40 border-b border-gold/30 bg-navy/95 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-border bg-off-white/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
           <div className="flex items-center gap-4 md:gap-8">
-            <button type="button" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu" className="shrink-0 text-ivory transition-colors hover:text-gold md:hidden">
+            <button type="button" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu" className="shrink-0 text-navy transition-colors hover:text-gold md:hidden">
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
             <BrandMark />
@@ -33,13 +33,13 @@ export function SiteHeader() {
 
           <nav className="hidden items-center gap-7 md:flex">
             {nav.map((item) => (
-              <Link key={item.to} to={item.to} activeOptions={{ exact: item.to === "/" }} activeProps={{ className: "text-gold border-gold" }} className="border-b border-transparent pb-1 text-xs tracking-[0.18em] text-ivory uppercase transition-colors hover:text-gold">
+              <Link key={item.to} to={item.to} activeOptions={{ exact: item.to === "/" }} activeProps={{ className: "text-gold border-gold" }} className="border-b border-transparent pb-1 text-xs tracking-[0.18em] text-navy uppercase transition-colors hover:text-gold">
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 text-ivory">
+          <div className="flex items-center gap-3 text-navy">
             <Link to="/shop" aria-label="Search products" className="transition-colors hover:text-gold"><Search className="h-4.5 w-4.5" strokeWidth={1.5} /></Link>
             <Link to="/shop" aria-label="Wishlist" className="hidden transition-colors hover:text-gold sm:block"><Heart className="h-4.5 w-4.5" strokeWidth={1.5} /></Link>
             <Link to="/login" aria-label="Customer account" className="hidden transition-colors hover:text-gold sm:block"><UserRound className="h-4.5 w-4.5" strokeWidth={1.5} /></Link>
@@ -50,9 +50,9 @@ export function SiteHeader() {
           </div>
         </div>
         {open && (
-          <nav className="border-t border-gold/25 px-4 pb-4 md:hidden">
-            {nav.map((item) => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} activeOptions={{ exact: item.to === "/" }} activeProps={{ className: "text-gold" }} className="block border-b border-gold/20 py-3 text-xs tracking-[0.18em] text-ivory uppercase last:border-0">{item.label}</Link>)}
-            <Link to="/login" onClick={() => setOpen(false)} className="block py-3 text-xs tracking-[0.18em] text-ivory uppercase">My account</Link>
+          <nav className="border-t border-border px-4 pb-4 md:hidden">
+            {nav.map((item) => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} activeOptions={{ exact: item.to === "/" }} activeProps={{ className: "text-gold" }} className="block border-b border-border py-3 text-xs tracking-[0.18em] text-navy uppercase last:border-0">{item.label}</Link>)}
+            <Link to="/login" onClick={() => setOpen(false)} className="block py-3 text-xs tracking-[0.18em] text-navy uppercase">My account</Link>
           </nav>
         )}
       </header>
