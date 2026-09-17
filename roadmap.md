@@ -12,11 +12,11 @@
 
 ## Storefront expansion
 
-- [ ] Add every requested homepage merchandising and social-proof section.
-- [ ] Expand product cards with size choices, wishlist, quick view, and cart actions.
-- [ ] Complete shop filters, sorting, four-column results, and pagination.
-- [ ] Complete product gallery, purchasing controls, trust details, accordions, and mobile cart bar.
-- [ ] Split cart and checkout into dedicated, complete pages.
-- [ ] Complete login, registration, dashboard tabs, and policy copy.
-- [ ] Install the uploaded logo, light navigation treatment, and matching favicon.
+- [x] Add every requested homepage merchandising and social-proof section.
+- [x] Expand product cards with size choices, wishlist, quick view, and cart actions.
+- [x] Complete shop filters, sorting, four-column results, and pagination.
+- [x] Complete product gallery, purchasing controls, trust details, accordions, and mobile cart bar.
+- [x] Split cart and checkout into dedicated, complete pages.
+- [x] Complete login, registration, dashboard tabs, and policy copy.
+- [x] Install the uploaded logo, light navigation treatment, and matching favicon.
 - [ ] Verify all storefront routes and interactions on desktop and mobile.
