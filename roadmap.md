@@ -19,4 +19,4 @@
 - [x] Split cart and checkout into dedicated, complete pages.
 - [x] Complete login, registration, dashboard tabs, and policy copy.
 - [x] Install the uploaded logo, light navigation treatment, and matching favicon.
-- [ ] Verify all storefront routes and interactions on desktop and mobile.
+- [x] Verify all storefront routes and interactions on desktop and mobile.
